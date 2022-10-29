@@ -10,7 +10,7 @@ namespace ProductView.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            return RedirectToAction("ViewProducts", "Product");
         }
 
         public ActionResult About()
