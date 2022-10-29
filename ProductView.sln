@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31321.278
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductView", "ProductView\ProductView.csproj", "{591892A6-4DBF-475D-8B56-EC76F1C1B571}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{591892A6-4DBF-475D-8B56-EC76F1C1B571}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{591892A6-4DBF-475D-8B56-EC76F1C1B571}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{591892A6-4DBF-475D-8B56-EC76F1C1B571}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{591892A6-4DBF-475D-8B56-EC76F1C1B571}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FDE8E5CD-6124-4825-A2BD-DE64AEAD1256}
+	EndGlobalSection
+EndGlobal

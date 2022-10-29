@@ -1,0 +1,56 @@
+﻿@model ProductView.Models.Products
+@{
+    ViewBag.Title = "CreateNewProduct";
+}
+
+
+<br />
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style>
+        .leftalign {
+            position: relative;
+            left: 40%;
+            top: 50px;
+        }
+
+        .align-label {
+            position: relative;
+            right: 70px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Create a New Product</h2>
+    <div class="card leftalign" style="width: 18rem;">
+        <div class="card-body">
+            <section id="loginForm">
+                @using (Html.BeginForm("CreateNewProduct", "Product", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                {
+                    @Html.AntiForgeryToken()
+
+                    <hr />
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.ProductName, new { @class = "col-md-2 control-label align-label" })
+                        <div class="col-md-10">
+                            @Html.TextBoxFor(m => m.ProductName, new { @class = "form-control" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.CategoryId, new { @class = "col-md-2 control-label align-label" })
+                        <div class="col-md-10">
+                            @Html.DropDownListFor(m => m.CategoryId, new SelectList(ViewBag.CategoryList, "Id", "CategoryName"), "Select Name...", new { @class = "form-control mb-3" })
+                            @Html.ValidationMessageFor(m => m.CategoryId, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <input type="submit" value="Submit" class="btn btn-success" style="position: relative; left: 40px;" />
+
+                }
+            </section>
+        </div>
+    </div>
+</body>
+</html>

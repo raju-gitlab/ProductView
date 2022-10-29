@@ -1,0 +1,54 @@
+﻿@model ProductView.Models.CategoryModels.CategoryModel
+@{
+    ViewBag.Title = "UpdateCategory";
+}
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style>
+        .leftalign {
+            position: relative;
+            left: 40%;
+            top: 50px;
+        }
+        .align-label {
+            position: relative;
+            right: 87px;
+        }
+    </style>
+</head>
+<body>
+    <div class="card leftalign" style="width: 18rem;">
+        <h2>UpdateCategory</h2>
+
+        <div class="card-body">
+            <section id="loginForm">
+                @using (Html.BeginForm("UpdateCategory", "Category", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                {
+                    @Html.AntiForgeryToken()
+
+                    <hr />
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Id, new { @class = "col-md-2 control-label" })
+                        <div class="col-md-10">
+                            @Html.TextBoxFor(m => m.Id, new { @class = "form-control"} )
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.CategoryName, new { @class = "col-md-2 control-label align-label" })
+                        <div class="col-md-10">
+                            @Html.TextBoxFor(m => m.CategoryName, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.CategoryName, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <input type="submit" value="Submit" class="btn btn-success" />
+
+                }
+            </section>
+        </div>
+    </div>
+</body>
+</html>
